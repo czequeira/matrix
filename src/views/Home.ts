@@ -1,3 +1,4 @@
-import { h3 } from 'bitterify/lib';
+import { div } from 'bitterify/lib';
+import { Table } from '../components/matrix';
 
-export const Home = h3('Home');
+export const Home = div([Table]);
