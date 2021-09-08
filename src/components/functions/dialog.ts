@@ -12,7 +12,7 @@ export function dialog(visible: Bind, title: string, content: Child) {
         'click',
         () => (visible.value = false),
       ),
-    ]).setClasses('flex justify-between'),
+    ]).setClasses('flex justify-between items-center mb-4'),
     content,
   ]).setClasses('w-2/4');
 }
