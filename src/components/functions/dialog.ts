@@ -1,4 +1,4 @@
-import { b, button, dialog as bDialog, div } from 'bitterify/lib';
+import { b, dialog as bDialog, div } from 'bitterify/lib';
 import { Bind } from 'bitterify/lib/core/classes';
 import { Child } from 'bitterify/lib/core/types';
 import { icon } from './icon';
