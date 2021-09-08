@@ -13,4 +13,4 @@ const data = bind(dataMocked);
 export const Table = table(
   data,
   data.value.map((i: IData) => tableColumn(i.denomination, Cell)),
-).setClasses('border border-separate');
+).setClasses('border border-separate table-fixed w-full');
