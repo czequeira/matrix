@@ -1,14 +1,16 @@
-import { bind, div, table, tableColumn } from 'bitterify/lib';
+import { bind, table, tableColumn } from 'bitterify/lib';
+import { IData } from '../../interfaces';
+import { Cell } from './Cell';
 
-const data = bind([
-  {
-    denomination: 'algo aqui',
-  },
+const dataMocked: IData[] = [
+  { denomination: 'algo aqui' },
   { denomination: 'otra cosa' },
   { denomination: 'otra mas' },
-]);
+];
+
+const data = bind(dataMocked);
 
 export const Table = table(
   data,
-  data.value.map((i: any) => tableColumn(i.denomination, () => div(['hola']))),
-);
+  data.value.map((i: IData) => tableColumn(i.denomination, Cell)),
+).setClasses('border border-separate');
