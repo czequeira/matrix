@@ -1,2 +1,3 @@
-export * from './IData';
 export * from './IBlock';
+export * from './IFile';
+export * from './ITable';

@@ -1,6 +1,5 @@
 import { bind, div } from 'bitterify/lib';
-import { IFile } from '../../interfaces/IFile';
-import { ITable } from '../../interfaces/ITable';
+import { IFile, ITable } from '../../interfaces';
 import { Block } from './Block';
 
 const columns = [
