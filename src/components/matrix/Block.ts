@@ -7,7 +7,7 @@ export function Block(block: IBlock) {
   const visible = bind(false, 'boolean');
 
   const Cell = div([block.denomination]).setClasses(
-    `cursor-pointer m-0.5 w-16 h-16 flex justify-center opacity-50 items-center hover:opacity-100`,
+    `cursor-pointer transition m-0.5 w-16 h-16 flex justify-center opacity-50 items-center hover:opacity-100`,
   );
 
   if (block.value && block.value >= 4)
