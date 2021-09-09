@@ -12,7 +12,7 @@ export function Block(block: IBlock) {
   if (block.value && block.value >= 4) color = 'bg-green-600';
 
   const button = div([block.denomination]).setClasses(
-    `cursor-pointer m-1 w-12 h-12 ${color} flex justify-center items-center`,
+    `cursor-pointer m-0.5 w-12 h-12 ${color} flex justify-center items-center`,
   );
 
   button.addEvent('click', () => (visible.value = true));
