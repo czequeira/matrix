@@ -1,24 +1,40 @@
-import { bind, div, table, tableColumn } from 'bitterify/lib';
-import { IData } from '../../interfaces';
-import { Cell } from './Cell';
+import { bind, div } from 'bitterify/lib';
+import { IFile } from '../../interfaces/IFile';
+import { ITable } from '../../interfaces/ITable';
+import { Block } from './Block';
 
-const dataMocked: IData[] = [
-  { denomination: 'Comunicacion' },
-  { denomination: 'Caracterizacion' },
-  { denomination: 'Organizacion' },
-  { denomination: 'Logistica' },
-  { denomination: 'Inmueble' },
-  { denomination: 'Planificacion' },
-  { denomination: 'Evaluacion' },
-  { denomination: 'Educacion' },
-  { denomination: 'Economia' },
+const columns = [
+  'comunicacion',
+  'logistica',
+  'observacion',
+  'asociacion',
+  'educacion',
+  'economia',
+  'constabilidad',
+  'verificacion',
+  'periodicidad',
 ];
 
-const data = bind(dataMocked);
+const mocked: ITable = {
+  table: 'propedeutica',
+  files: columns.map((i) => ({
+    file: i,
+    blocks: columns.map((j) => ({
+      denomination: `${i.substr(0, 2)}-${j.substr(0, 2)}`,
+      table: 'propedeutica',
+      column: j,
+      file: i,
+      value: Math.random() * 4 + 1,
+    })),
+  })),
+};
 
-export const Table = table(data, [
-  tableColumn('', (i: IData) =>
-    div([i.denomination]).setClasses('flex justify-center'),
-  ),
-  ...data.value.map((i: IData) => tableColumn(i.denomination, Cell)),
-]).setClasses('border border-separate table-fixed w-full my-4');
+const data = bind(mocked);
+
+export function Table() {
+  return div(
+    data.value.files.map((i: IFile) =>
+      div(i.blocks.map((b) => Block(b))).setClasses('flex justify-center'),
+    ),
+  );
+}

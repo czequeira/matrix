@@ -9,7 +9,7 @@ export const Home = div([
   h2('Proceso de dirección educacional'),
   h3('primer ciclo'),
   h4('etapa propedeutica'),
-  Table,
+  Table(),
   div([
     button(() => (visible.value = true), 'Objetivo').setClasses(
       'ring bg-blue-600',
