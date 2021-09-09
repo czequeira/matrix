@@ -19,5 +19,8 @@ export function Block(block: IBlock) {
 
   if (block.column === block.file) button.addClasses('ring');
 
-  return div([button, dialog(visible, block.denomination, Info(block))]);
+  return div([
+    button,
+    dialog(visible, `${block.file}-${block.column}`, Info(block)),
+  ]);
 }
