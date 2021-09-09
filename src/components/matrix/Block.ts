@@ -11,17 +11,17 @@ export function Block(block: IBlock) {
   );
 
   if (block.value && block.value >= 4)
-    Cell.addClasses('bg-green-600 text-white');
+    Cell.addClasses('bg-green-600 text-white ring-green-800');
   else if (block.value && block.value >= 3)
-    Cell.addClasses('bg-yellow-400 text-white');
+    Cell.addClasses('bg-yellow-400 text-white ring-yellow-600');
   else if (block.value && block.value >= 2)
-    Cell.addClasses('bg-red-600 text-white');
-  else Cell.addClasses('bg-gray-100 text-gray-900');
+    Cell.addClasses('bg-red-600 text-white ring-red-800');
+  else Cell.addClasses('bg-gray-100 text-gray-900 ring-gray-300');
 
   Cell.addEvent('click', () => (visible.value = true));
 
   if (block.column === block.file)
-    Cell.removeClasses('opacity-50').addClasses('opacity-90');
+    Cell.removeClasses('opacity-50').addClasses('ring opacity-90');
 
   return div([
     Cell,

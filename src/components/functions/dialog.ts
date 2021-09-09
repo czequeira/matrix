@@ -3,6 +3,8 @@ import { Bind } from 'bitterify/lib/core/classes';
 import { Child } from 'bitterify/lib/core/types';
 import { icon } from './icon';
 
+// in firefox: * Not supported by default, but can be enabled in about:config (set dom.dialog_element.enabled to true).
+
 export function dialog(visible: Bind, title: string, content: Child) {
   return bDialog(visible, [
     div([

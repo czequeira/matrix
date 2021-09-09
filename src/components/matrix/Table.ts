@@ -31,9 +31,11 @@ const mocked: ITable = {
 const data = bind(mocked);
 
 export function Table() {
-  return div(
-    data.value.files.map((i: IFile) =>
-      div(i.blocks.map((b) => Block(b))).setClasses('flex justify-center'),
-    ),
-  );
+  return div([
+    div(
+      data.value.files.map((i: IFile) =>
+        div(i.blocks.map((b) => Block(b))).setClasses('flex justify-center'),
+      ),
+    ).setClasses('ring ring-gray-500'),
+  ]).setClasses('flex justify-center');
 }
