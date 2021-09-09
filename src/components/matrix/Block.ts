@@ -1,6 +1,7 @@
 import { bind, div } from 'bitterify/lib';
 import { IBlock } from '../../interfaces';
 import { dialog } from '../functions';
+import { Info } from './Info';
 
 export function Block(block: IBlock) {
   const visible = bind(false, 'boolean');
@@ -18,5 +19,5 @@ export function Block(block: IBlock) {
 
   if (block.column === block.file) button.addClasses('ring');
 
-  return div([button, dialog(visible, block.denomination, 'Hola')]);
+  return div([button, dialog(visible, block.denomination, Info(block))]);
 }
