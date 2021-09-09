@@ -4,4 +4,5 @@ export interface IBlock {
   file: string;
   denomination: string;
   value?: number;
+  note?: string;
 }
