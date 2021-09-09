@@ -5,8 +5,8 @@ export function Target() {
   const visible = bind(false, 'boolean');
 
   const Button = div([
-    btn(() => (visible.value = true), 'Objetivo'),
-  ]).setClasses('flex justify-end');
+    btn(() => (visible.value = true), 'Objetivo', { type: 'primary' }),
+  ]).setClasses('flex justify-end mt-4');
 
   const Dialog = dialog(
     visible,
