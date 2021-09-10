@@ -24,7 +24,10 @@ export const Overlay = div()
   .setClasses(
     'bg-black bg-opacity-20 fixed inset-0 hidden justify-center items-center p-4',
   )
-  .addEvent('click', closeModal);
+  .addEvent('click', (e) => {
+    if (e.target !== Overlay.getHtmlElement()) return;
+    closeModal();
+  });
 
 export function closeModal() {
   Overlay.removeClasses('flex').addClasses('hidden');
