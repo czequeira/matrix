@@ -1,11 +1,9 @@
-import { bind, div } from 'bitterify/lib';
+import { div } from 'bitterify/lib';
 import { IBlock } from '../../interfaces';
-import { dialog } from '../functions';
+import { modal } from '../functions';
 import { Info } from './Info';
 
 export function Block(block: IBlock) {
-  const visible = bind(false, 'boolean');
-
   const Cell = div([block.denomination]).setClasses(
     `cursor-pointer transition m-0.5 w-16 h-16 flex justify-center opacity-50 items-center hover:opacity-100`,
   );
@@ -18,13 +16,12 @@ export function Block(block: IBlock) {
     Cell.addClasses('bg-red-600 text-white ring-red-800');
   else Cell.addClasses('bg-gray-100 text-gray-900 ring-gray-300');
 
-  Cell.addEvent('click', () => (visible.value = true));
+  Cell.addEvent('click', () =>
+    modal(`${block.file}-${block.column}`, Info(block)),
+  );
 
   if (block.column === block.file)
     Cell.removeClasses('opacity-50').addClasses('ring opacity-90');
 
-  return div([
-    Cell,
-    dialog(visible, `${block.file}-${block.column}`, Info(block)),
-  ]);
+  return Cell;
 }
