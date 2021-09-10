@@ -1,5 +1,5 @@
 import { a, bind, div } from 'bitterify/lib';
-import { IFile, ITable } from '../../interfaces';
+import { IFile, ITable } from '../../../interfaces';
 import { Block } from './Block';
 import { LabelFile } from './LabelFile';
 

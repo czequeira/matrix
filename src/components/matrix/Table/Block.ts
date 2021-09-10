@@ -1,6 +1,6 @@
 import { div } from 'bitterify/lib';
-import { IBlock } from '../../interfaces';
-import { modal } from '../functions';
+import { IBlock } from '../../../interfaces';
+import { modal } from '../../functions';
 import { Info } from './Info';
 
 export function Block(block: IBlock) {

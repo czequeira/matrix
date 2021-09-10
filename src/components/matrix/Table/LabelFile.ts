@@ -1,6 +1,6 @@
 import { a, div } from 'bitterify/lib';
 import { Bind } from 'bitterify/lib/core/classes';
-import { IFile } from '../../interfaces';
+import { IFile } from '../../../interfaces';
 
 function LabelCell(i: IFile, isLast: boolean) {
   const Cell = div([
