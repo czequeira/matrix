@@ -22,7 +22,7 @@ function createModal(Header: Child, Body: Child = '') {
 
 export const Overlay = div()
   .setClasses(
-    'bg-black bg-opacity-20 absolute inset-0 hidden justify-center items-center p-4',
+    'bg-black bg-opacity-20 fixed inset-0 hidden justify-center items-center p-4',
   )
   .addEvent('click', closeModal);
 
