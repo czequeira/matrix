@@ -1,7 +1,7 @@
 import { a, bind, div } from 'bitterify/lib';
 import { IFile, ITable } from '../../interfaces';
 import { Block } from './Block';
-import { Target } from './Target';
+import { LabelFile } from './LabelFile';
 
 const columns = [
   'Subjetivo',
@@ -34,17 +34,7 @@ export function Table() {
   return div([
     div([
       // primera fila
-      div([
-        div(),
-        ...data.value.files.map((i: IFile) =>
-          div([
-            div([i.file])
-              .setClasses('transform rotate-180')
-              .setStyle('writing-mode', 'vertical-lr'),
-          ]).setClasses('mx-0.5 py-2 w-16 flex justify-center'),
-        ),
-        div(),
-      ]).setClasses('flex justify-center'),
+      LabelFile(data),
       // la matrix
       ...data.value.files.map((i: IFile) =>
         div([
@@ -54,17 +44,7 @@ export function Table() {
         ]).setClasses('flex justify-center'),
       ),
       // ultima fila
-      div([
-        div(),
-        ...data.value.files.map((i: IFile) =>
-          div([
-            a(i.file, '#about')
-              .setClasses('transform rotate-180')
-              .setStyle('writing-mode', 'vertical-lr'),
-          ]).setClasses('mx-0.5 py-2 w-16 flex justify-center items-start'),
-        ),
-        div(),
-      ]).setClasses('flex justify-center'),
+      LabelFile(data, true),
     ]).setClasses('ring ring-gray-500'),
   ]).setClasses('flex justify-center mt-6');
 }
