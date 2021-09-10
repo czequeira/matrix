@@ -10,8 +10,8 @@ export function btn(fn: () => void, content?: string, config?: IConfig) {
   );
 
   if (config?.type === 'primary')
-    Button.addClasses('bg-green-500 ring-green-500 text-white');
-  else Button.addClasses('bg-white ring-green-500 text-green-600');
+    Button.addClasses('bg-primary ring-primary text-white');
+  else Button.addClasses('bg-white ring-primary text-primary');
 
   return Button;
 }

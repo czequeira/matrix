@@ -9,7 +9,9 @@ export function Info(block: IBlock) {
   ]);
   value.setClasses('flex justify-center');
 
-  const note = div([block.note || 'No hay notas']);
+  const note = div([block.note || 'No hay notas']).setClasses(
+    'flex justify-center m-4 rounded ring ring-primary',
+  );
 
   return div([value, note]);
 }

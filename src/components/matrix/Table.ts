@@ -45,6 +45,6 @@ export function Table() {
       ),
       // ultima fila
       LabelFile(data, true),
-    ]).setClasses('ring ring-gray-500'),
+    ]).setClasses('ring ring-primary rounded'),
   ]).setClasses('flex justify-center mt-6');
 }

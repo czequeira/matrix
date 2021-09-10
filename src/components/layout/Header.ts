@@ -15,10 +15,10 @@ const MenuIcon = icon('M4 6h16M4 12h16M4 18h16');
 
 const ShowNav = button(() => (menuVisible.value = !menuVisible.value), '')
   .setChildren([MenuIcon])
-  .setClasses('md:hidden hover:bg-b5 p-1 rounded-md');
+  .setClasses('md:hidden hover:bg-secundary p-1 rounded-md');
 
 export const Header = header([
   div([Logo, Nav, ShowNav]).setClasses(
     'flex justify-between md:container mx-auto px-4 py-3',
   ),
-]).setClasses('bg-b1 text-white');
+]).setClasses('bg-primary text-white');
