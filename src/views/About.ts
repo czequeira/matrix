@@ -1,3 +1,9 @@
-import { h3 } from 'bitterify/lib';
+import { div, h3 } from 'bitterify/lib';
+import { btn, modal } from '../components/functions';
 
-export const About = h3('About');
+export const About = div([
+  h3('About'),
+  btn(() => {
+    modal();
+  }, 'open'),
+]);
