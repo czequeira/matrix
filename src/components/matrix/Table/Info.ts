@@ -1,5 +1,6 @@
 import { div, h3 } from 'bitterify/lib';
 import { IBlock } from '../../../interfaces';
+import { Edit } from './Edit';
 
 export function Info(block: IBlock) {
   const value = div([
@@ -13,5 +14,7 @@ export function Info(block: IBlock) {
     'flex justify-center m-4 rounded ring ring-primary',
   );
 
-  return div([value, note]);
+  const edit = div([Edit(block)]).setClasses('flex justify-end mr-4');
+
+  return div([value, edit, note]);
 }
