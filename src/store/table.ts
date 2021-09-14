@@ -26,7 +26,7 @@ const mocked: ITable = {
   })),
 };
 
-export const data = bind(mocked);
+export const data = bind(null, 'object');
 export const loading = bind(true, 'boolean');
 
 export function populateTable() {

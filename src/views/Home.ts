@@ -7,6 +7,6 @@ export const Home = div([
   title1('Proceso de dirección docente educativa'),
   //  title2('primer ciclo'),
   //  title3('etapa propedeutica'),
-  Table(),
+  Table,
   Target(),
 ]).onMounted(populateTable);
