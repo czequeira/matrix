@@ -15,7 +15,7 @@ function LabelCell(i: IFile, isLast: boolean) {
 export function LabelFile(data: Bind, isLast = false) {
   return div([
     div(),
-    ...data.value.files.map((i: IFile) => LabelCell(i, isLast)),
+    ...data.value?.files?.map((i: IFile) => LabelCell(i, isLast)),
     div(),
   ]).setClasses('flex justify-center');
 }
