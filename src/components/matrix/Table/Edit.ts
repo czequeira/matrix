@@ -15,7 +15,7 @@ function createIndicator(label: string) {
   return div([
     `${label}:`,
     formItem(input(indicator)).setClasses(
-      'py-1 px-2 ring ring-primary rounded w-full',
+      'py-1 px-2 ring-2 ring-primary rounded w-full',
     ),
   ]);
 }

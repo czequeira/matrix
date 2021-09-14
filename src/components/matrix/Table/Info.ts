@@ -11,7 +11,7 @@ export function Info(block: IBlock) {
   value.setClasses('flex justify-center');
 
   const note = div([block.note || 'No hay notas']).setClasses(
-    'flex justify-center m-4 rounded ring ring-primary',
+    'flex justify-center m-4 rounded ring-2 ring-primary',
   );
 
   const edit = div([Edit(block)]).setClasses('flex justify-end mr-4');

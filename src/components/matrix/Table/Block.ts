@@ -21,7 +21,7 @@ export function Block(block: IBlock) {
   );
 
   if (block.column === block.file)
-    Cell.removeClasses('bg-opacity-50').addClasses('ring bg-opacity-90');
+    Cell.removeClasses('bg-opacity-50').addClasses('ring-2 bg-opacity-90');
 
   return Cell;
 }
