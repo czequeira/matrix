@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
@@ -15,5 +17,14 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    plugin(function({ addComponents, theme }) {
+      const newBorders = {
+        '.border-t-primary': {
+          borderTopColor: theme('colors.primary'),
+        },
+      }
+      addComponents(newBorders)
+    })
+  ]
 }
