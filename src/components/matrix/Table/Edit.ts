@@ -1,6 +1,6 @@
 import { IBlock } from '../../../interfaces';
-import { bind, div, form, formItem, input } from 'bitterify/lib';
-import { btn, closeModal, icon, modal } from '../../functions';
+import { bind, div, form, formItem } from 'bitterify/lib';
+import { btn, closeModal, icon, modal, input } from '../../functions';
 
 function createSubmit() {
   return div([
@@ -12,12 +12,7 @@ function createSubmit() {
 
 function createIndicator(label: string) {
   const indicator = bind('');
-  return div([
-    `${label}:`,
-    formItem(input(indicator)).setClasses(
-      'py-1 px-2 ring-2 ring-gray-300 focus:ring-primary rounded w-full',
-    ),
-  ]);
+  return div([`${label}:`, formItem(input(indicator))]);
 }
 
 function createForm(block: IBlock) {
