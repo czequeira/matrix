@@ -3,6 +3,7 @@ import { IFile } from '../../../interfaces';
 import { data, loading } from '../../../store';
 import { spinner } from '../../functions';
 import { Block } from './Block';
+import { File } from './Filte';
 import { LabelFile } from './LabelFile';
 
 const Content = div(
@@ -12,13 +13,7 @@ const Content = div(
           // primera fila
           LabelFile(data),
           // la matrix
-          ...(data.value?.files?.map((i: IFile) =>
-            div([
-              div([a(i.file, '#about')]).setClasses('px-2 flex items-center'),
-              ...i.blocks.map((b) => Block(b)),
-              div([a(i.file, '#asd')]).setClasses('px-2 flex items-center'),
-            ]).setClasses('flex justify-center'),
-          ) || ''),
+          ...data.value?.files?.map((i: IFile) => File(i)),
           // ultima fila
           LabelFile(data, true),
         ]
