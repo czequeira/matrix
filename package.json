@@ -24,7 +24,7 @@
   },
   "scripts": {
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
-    "serve": "bitter serve",
+    "serve": "bitter serve --port 8081",
     "css:dev": "tailwindcss build src/styles/tailwindcss.css -o public/css/tailwindcss.css"
   },
   "keywords": [],
