@@ -5,3 +5,4 @@ export * from './modal';
 export * from './global-spinner';
 export * from './spinner';
 export * from './input';
+export * from './select';

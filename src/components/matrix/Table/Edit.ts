@@ -1,6 +1,21 @@
 import { IBlock } from '../../../interfaces';
 import { bind, div, form, formItem } from 'bitterify/lib';
-import { btn, closeModal, icon, modal, input } from '../../functions';
+import { btn, closeModal, icon, modal, select } from '../../functions';
+
+const options = [
+  {
+    label: 'Bien',
+    value: '4',
+  },
+  {
+    label: 'Regular',
+    value: '3',
+  },
+  {
+    label: 'Mal',
+    value: '2',
+  },
+];
 
 function createSubmit() {
   return div([
@@ -11,8 +26,8 @@ function createSubmit() {
 }
 
 function createIndicator(label: string) {
-  const indicator = bind('');
-  return div([`${label}:`, formItem(input(indicator))]);
+  const indicator = bind('', 'string');
+  return div([`${label}:`, formItem(select(indicator, options))]);
 }
 
 function createForm(block: IBlock) {
