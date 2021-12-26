@@ -22,5 +22,7 @@ export function Block(block: IBlock) {
       'ring-2 ring-primary bg-opacity-90 font-bold',
     );
 
+  Cell.title(`${block.file}-${block.column}`);
+
   return Cell;
 }

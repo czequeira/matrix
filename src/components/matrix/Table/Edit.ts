@@ -19,15 +19,18 @@ const options = [
 
 function createSubmit() {
   return div([
-    btn(closeModal, 'Cancelar'),
+    btn(closeModal, 'Cancelar').title('Cancelar la acción'),
     // eslint-disable-next-line @typescript-eslint/no-empty-function
-    btn(() => {}, 'Guardar', { type: 'primary' }),
+    btn(() => {}, 'Guardar', { type: 'primary' }).title('Guardar los cambios'),
   ]).setClasses('flex justify-end mt-4');
 }
 
 function createIndicator(label: string) {
   const indicator = bind('', 'string');
-  return div([`${label}:`, formItem(select(indicator, options))]);
+  return div([
+    `${label}:`,
+    formItem(select(indicator, options).title('Seleccione un valor')),
+  ]);
 }
 
 function createForm(block: IBlock) {
@@ -47,7 +50,9 @@ export function Edit(block: IBlock) {
   return icon(
     'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z',
     'w-6 h-6 cursor-pointer text-gray-800',
-  ).addEvent('click', () => {
-    modal('Indicadores', createForm(block));
-  });
+  )
+    .addEvent('click', () => {
+      modal('Indicadores', createForm(block));
+    })
+    .title('Cambiar la evaluacón');
 }

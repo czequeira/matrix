@@ -5,6 +5,7 @@ import { IFile } from '../../../interfaces';
 function LabelCell(i: IFile, isLast: boolean) {
   const Cell = div([
     a(i.file, '#about')
+      .title(`Ver información sobre ${i.file}`)
       .setClasses('transform rotate-180')
       .setStyle('writing-mode', 'vertical-lr'),
   ]).setClasses('mx-0.5 py-2 w-16 flex justify-center');
