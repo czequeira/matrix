@@ -5,7 +5,7 @@ import { Info } from './Info';
 
 export function Block(block: IBlock) {
   const Cell = div([block.denomination]).setClasses(
-    `cursor-pointer text-primary transition m-0.5 w-16 h-16 flex justify-center bg-opacity-50 items-center hover:bg-opacity-100`,
+    `cursor-pointer text-primary text-xs md:text-base transition w-8 h-8 md:w-14 md:h-14 lg:w-16 lg:h-16 m-0.5 flex justify-center bg-opacity-50 items-center hover:bg-opacity-100`,
   );
 
   if (block.value && block.value >= 4) Cell.addClasses('bg-success');

@@ -8,7 +8,7 @@ function LabelCell(i: IFile, isLast: boolean) {
       .title(`Ver información sobre ${i.file}`)
       .setClasses('transform rotate-180')
       .setStyle('writing-mode', 'vertical-lr'),
-  ]).setClasses('mx-0.5 py-2 w-16 flex justify-center');
+  ]).setClasses('mx-0.5 py-2 w-14 lg:w-16 hidden md:flex justify-center');
   if (isLast) Cell.addClasses('items-start');
   return Cell;
 }

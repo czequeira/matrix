@@ -42,7 +42,8 @@ function createForm(block: IBlock) {
       createIndicator('otro indicador incluso mas largo aun'),
       createIndicator('otro indicador mas'),
     ],
-  ).setClasses('grid gap-4 grid-cols-2');
+  ).setClasses('grid gap-4 grid-cols-1 md:grid-cols-2');
+  // ).setClasses('grid gap-4 grid-cols-2');
   return div([Form, createSubmit()]).setClasses('p-4');
 }
 
